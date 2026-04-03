@@ -1,8 +1,10 @@
 const express=require('express');
 const app=express();
 const mongoose=require('mongoose')
+require('dotenv').config()
 
-mongoose.connect("mongodb+srv://soudeepta2004bhattacharjee_db_user:s0DDEN6lg1odSUFS@cluster0.ecnbv0b.mongodb.net/jobrecommender")
+
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log("mongodb connected"))
 .catch(err=>console.log(err));
 
@@ -12,6 +14,6 @@ app.use(express.json())
 
 app.use('/api/job',jobRoutes);
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("server running at port 3000")
 });
