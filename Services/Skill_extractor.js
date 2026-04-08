@@ -6,7 +6,8 @@ const skills=[
     "python",
     "java",
     "express",
-    "sql"
+    "sql",
+    "GitHub"
 ]
 
 function extractSkills(text){
